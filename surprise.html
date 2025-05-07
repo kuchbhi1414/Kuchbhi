@@ -37,18 +37,6 @@
             text-align: center; /* Center align the roses */
         }
 
-        .fireworks {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            background-image: url('fireworks.gif'); /* Replace with actual gif path */
-            background-size: cover;
-            opacity: 0.4;
-        }
-
         .video-container {
             display: flex; /* Flexbox for alignment */
             justify-content: center; /* Center horizontally */
@@ -68,6 +56,17 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background-image: url('fireworks.gif'); /* Replace with actual gif path */
+            background-size: cover;
+            opacity: 0.4;
         }
     </style>
 </head>
