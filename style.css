@@ -67,13 +67,14 @@ button {
   background: linear-gradient(45deg, #ff6b81, #ff4d4d);
   color: white;
   border: none;
-  padding: 12px 25px;
+  padding: 8px 20px;
   font-size: 1.1em;
   font-weight: bold;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 8px 15px rgba(255, 107, 129, 0.3);
+  white-space: nowrap;
 }
 
 button:hover {
