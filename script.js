@@ -1,40 +1,43 @@
-// Event listener for the "Tap for something special" button
-document.getElementById('startButton').addEventListener('click', () => {
-  // Hide the first scene
+document.addEventListener('DOMContentLoaded', () => {
+  const startButton = document.getElementById('startButton');
   const scene1 = document.getElementById('scene1');
-  scene1.classList.add('hidden');
-
-  // Show the third scene
   const scene3 = document.getElementById('scene3');
-  scene3.classList.remove('hidden');
-
-  // Add balloons and images dynamically
   const balloonsContainer = document.getElementById('balloonsContainer');
-  const photos = ['img1.jpg', 'img2.jpg', 'img3.jpg']; // Replace with actual image paths
+  const messageText = document.getElementById('messageText');
+  const surpriseButton = document.getElementById('surpriseButton');
 
-  // Create balloons for each photo
-  photos.forEach((src, index) => {
-    const balloon = document.createElement('div');
-    balloon.classList.add('balloon');
-    balloon.style.left = `${30 + index * 100}px`;
-    balloon.style.animationDelay = `${index * 1.5}s`;
+  const photoList = [
+    'img1.jpg', // Replace with actual photo paths
+    'img2.jpg',
+    'img3.jpg',
+    'img4.jpg'
+  ];
 
-    const img = document.createElement('img');
-    img.src = src;
-
-    balloon.appendChild(img);
-    balloonsContainer.appendChild(balloon);
+  startButton.addEventListener('click', () => {
+    scene1.classList.add('hidden');
+    scene3.classList.remove('hidden');
+    loadBalloons();
   });
 
-  // Show the message text after a delay
-  setTimeout(() => {
-    const messageText = document.getElementById('messageText');
-    messageText.classList.remove('hidden');
-  }, 5000); // Adjust delay as needed
-});
+  function loadBalloons() {
+    photoList.forEach((src, i) => {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = `${40 + i * 80}px`;
+      balloon.style.animationDelay = `${i * 0.8}s`;
 
-// Event listener for the "Tap for Surprise" button
-document.getElementById('surpriseButton').addEventListener('click', () => {
-  // Navigate to the surprise page
-  window.location.href = 'surprise.html';
+      const img = document.createElement('img');
+      img.src = src;
+      balloon.appendChild(img);
+      balloonsContainer.appendChild(balloon);
+    });
+
+    setTimeout(() => {
+      messageText.classList.remove('hidden');
+    }, 4000);
+  }
+
+  surpriseButton.addEventListener('click', () => {
+    window.location.href = 'surprise.html';
+  });
 });
