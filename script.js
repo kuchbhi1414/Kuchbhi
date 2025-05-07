@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const surpriseButton = document.getElementById('surpriseButton');
     
     // Add the audio element dynamically
-    const audio = new Audio('birthday_music.mp3'); // Replace with your music file path
+    const audio = new Audio(birthday_music.mp3); // Replace with your music file path
     audio.loop = true; // Set the music to loop
 
     const photoList = [
