@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,7 @@
       color: white;
       text-align: center;
       font-family: 'Cursive', sans-serif;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     h1 {
@@ -23,10 +22,16 @@
       animation: fadeIn 2s ease-in;
     }
 
+    p {
+      font-size: 2em;
+      color: #ffa502;
+      animation: fadeIn 3s ease-in;
+    }
+
     .roses {
       font-size: 2em;
       margin-top: 20px;
-      animation: fadeIn 3s ease-in;
+      animation: fadeIn 4s ease-in;
     }
 
     .fireworks {
@@ -36,26 +41,20 @@
       width: 100vw;
       height: 100vh;
       pointer-events: none;
-      background-image: url('fireworks.gif'); /* Replace with your gif path */
+      background-image: url('fireworks.gif'); /* Replace with actual gif path */
       background-size: cover;
-      background-position: center;
       opacity: 0.4;
-      z-index: 0;
     }
 
     .video-container {
-      position: relative;
-      z-index: 1;
-      margin: 40px auto;
-      width: 90%;
-      max-width: 800px;
+      margin-top: 40px;
     }
 
     video {
-      width: 100%;
+      width: 80%;
       height: auto;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     @keyframes fadeIn {
@@ -66,37 +65,20 @@
 </head>
 <body>
   <div class="fireworks"></div>
+  
+  <!-- Background Music -->
+<audio autoplay loop>
+     <source src="birthday_music.mp3" type="audio/mpeg">
+     Your browser does not support the audio element.
+</audio>
   <h1>Happy Birthday Admin</h1>
   <div class="roses">🌹 🌹 🌹</div>
-<audio autoplay loop>
-  <source src="birthday_music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
   <!-- Video Section -->
   <div class="video-container">
     <video controls>
       <source src="birthday_video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
   </div>
 </body>
 </html>
-
-
----
-
-What’s Fixed:
-
-The video is now inside a .video-container with:
-
-max-width: 800px — keeps it from stretching too wide
-
-width: 90% — keeps it responsive for mobile
-
-
-video now fits neatly and scales properly without zooming in.
-
-
-Let me know if you want it to autoplay or play in a loop too.
-
