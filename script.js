@@ -1,8 +1,4 @@
-document.getElementById("startButton").addEventListener("click", () => {
-  document.getElementById("scene1").classList.add("hidden");
-  const scene3 = document.getElementById("scene3");
-  scene3.classList.remove("hidden");
-  <script>
+<script>
     document.addEventListener("DOMContentLoaded", () => {
         const heartContainer = document.getElementById("heart-container");
 
@@ -29,7 +25,11 @@ document.getElementById("startButton").addEventListener("click", () => {
         setInterval(createHeart, 300);
     });
 </script>
-
+document.getElementById("startButton").addEventListener("click", () => {
+  document.getElementById("scene1").classList.add("hidden");
+  const scene3 = document.getElementById("scene3");
+  scene3.classList.remove("hidden");
+     
   const balloonsContainer = document.getElementById("balloonsContainer");
   const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
 
