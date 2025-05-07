@@ -31,6 +31,11 @@
         setInterval(createHeart, 300);
     });
 document.getElementById("startButton").addEventListener("click", () => {
+  const audio = new Audio("birthday_music(1).mp3");
+  audio.loop = true;
+  audio.play().catch(error => {
+    console.log("Autoplay prevented:", error);
+  });
   document.getElementById("scene1").classList.add("hidden");
   const scene3 = document.getElementById("scene3");
   scene3.classList.remove("hidden");
