@@ -5,7 +5,7 @@ document.getElementById("startButton").addEventListener("click", () => {
 
   const balloonsContainer = document.getElementById("balloonsContainer");
   // Add the audio element dynamically
-    const audio = new Audio('birthday_music.mp3'); // Replace with your music file path
+    const audio = new Audio(birthday_music.mp3); // Replace with your music file path
     audio.loop = true; // Set the music to loop
   const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
 
