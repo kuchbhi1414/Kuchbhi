@@ -10,6 +10,38 @@ body {
   height: 100vh;
   text-align: center;
 }
+/* Floating Hearts Container */
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure hearts don't block interactions */
+    z-index: 9999; /* Ensure hearts are on top */
+    overflow: hidden;
+}
+
+/* Individual Heart */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+    opacity: 0.8;
+}
+
+/* Heart Float Animation */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
 
 .scene {
   max-width: 600px;
