@@ -1,7 +1,4 @@
  document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.querySelector('audio');
-         audio.play();
-     });
         const heartContainer = document.getElementById("heart-container");
 
         // Function to create a heart
