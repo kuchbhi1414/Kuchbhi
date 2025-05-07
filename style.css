@@ -64,13 +64,16 @@ body {
 }
 
 button {
+  position: fixed; /* Ensure the button stays fixed at the bottom */
+  bottom: 10px; /* Set the distance from the bottom of the screen to 10px */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Ensure proper centering */
   background: linear-gradient(45deg, #ff6b81, #ff4d4d);
   color: white;
   border: none;
   padding: 12px 25px;
   font-size: 1.1em;
   font-weight: bold;
-bottom: 20px;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -80,14 +83,12 @@ bottom: 20px;
 button:hover {
   background: linear-gradient(45deg, #ff4d4d, #ff6b81);
   box-shadow: 0 12px 20px rgba(255, 107, 129, 0.5);
-  transform: scale(1.05);
-bottom: 20px;
+  transform: translateX(-50%) scale(1.05); /* Maintain centering and enlarge slightly */
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: translateX(-50%) scale(0.95); /* Maintain centering and shrink slightly */
   box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
-bottom: 20px;
 }
 
 button:hover {
