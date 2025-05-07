@@ -58,15 +58,17 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .fireworks {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 60vw;
-            height: 60vh;
-            pointer-events: none;
-            background-image: url('fireworks.gif'); /* Replace with actual gif path */
-            background-size: cover;
-            opacity: 00.5;
+    position: absolute;
+    top: 0;
+    right: 0; /* Aligns to the top-right corner */
+    width: 300px; /* Adjust the size of the fireworks */
+    height: 300px; /* Adjust the size of the fireworks */
+    pointer-events: none;
+    background-image: url('fireworks.gif'); /* Path to your fireworks GIF */
+    background-size: cover; /* Ensures the GIF scales properly */
+    background-repeat: no-repeat; /* Prevents the GIF from repeating */
+    opacity: 0.8; /* Adjust the visibility of the fireworks */
+    z-index: 1; /* Ensure it's above other elements */
         }
     </style>
 </head>
