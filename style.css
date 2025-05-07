@@ -64,14 +64,27 @@ body {
 }
 
 button {
-  background: #ff6b81;
+  background: linear-gradient(45deg, #ff6b81, #ff4d4d);
   color: white;
   border: none;
   padding: 12px 25px;
   font-size: 1.1em;
-  border-radius: 8px;
+  font-weight: bold;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 15px rgba(255, 107, 129, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff4d4d, #ff6b81);
+  box-shadow: 0 12px 20px rgba(255, 107, 129, 0.5);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
 }
 
 button:hover {
