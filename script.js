@@ -2,6 +2,33 @@ document.getElementById("startButton").addEventListener("click", () => {
   document.getElementById("scene1").classList.add("hidden");
   const scene3 = document.getElementById("scene3");
   scene3.classList.remove("hidden");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const heartContainer = document.getElementById("heart-container");
+
+        // Function to create a heart
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.textContent = "❤️";
+
+            // Random position and size
+            heart.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+            heart.style.fontSize = Math.random() * 20 + 10 + "px"; // Random size
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Random animation time
+
+            heartContainer.appendChild(heart);
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 5000); // Match animation duration
+        }
+
+        // Generate hearts every 300ms
+        setInterval(createHeart, 300);
+    });
+</script>
 
   const balloonsContainer = document.getElementById("balloonsContainer");
   const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
