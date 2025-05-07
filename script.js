@@ -1,5 +1,4 @@
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
         const heartContainer = document.getElementById("heart-container");
 
         // Function to create a heart
@@ -24,7 +23,6 @@
         // Generate hearts every 300ms
         setInterval(createHeart, 300);
     });
-</script>
 document.getElementById("startButton").addEventListener("click", () => {
   document.getElementById("scene1").classList.add("hidden");
   const scene3 = document.getElementById("scene3");
