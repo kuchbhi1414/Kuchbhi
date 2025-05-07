@@ -1,27 +1,20 @@
-document.getElementById("startButton").addEventListener("click", () => {
-  document.getElementById("scene1").classList.add("hidden");
-  const scene3 = document.getElementById("scene3");
-  scene3.classList.remove("hidden");
+document.getElementById("startButton").addEventListener("click", () => { const backgroundMusic = document.getElementById("backgroundMusic"); backgroundMusic.play();
 
-  const balloonsContainer = document.getElementById("balloonsContainer");
-  const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
+document.getElementById("scene1").classList.add("hidden"); const scene3 = document.getElementById("scene3"); scene3.classList.remove("hidden");
 
-  photos.forEach((src, index) => {
-    const balloon = document.createElement("div");
-    balloon.classList.add("balloon");
-    balloon.style.left = `${30 + index * 100}px`;
-    balloon.style.animationDelay = `${index * 1.5}s`;
+const balloonsContainer = document.getElementById("balloonsContainer"); const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
 
-    const img = document.createElement("img");
-    img.src = src;
+photos.forEach((src, index) => { const balloon = document.createElement("div"); balloon.classList.add("balloon"); balloon.style.left = ${30 + index * 100}px; balloon.style.animationDelay = ${index * 1.5}s;
 
-    balloon.appendChild(img);
-    balloonsContainer.appendChild(balloon);
-  });
+const img = document.createElement("img");
+img.src = src;
 
-  document.getElementById("messageText").classList.remove("hidden");
+balloon.appendChild(img);
+balloonsContainer.appendChild(balloon);
+
 });
 
-document.getElementById("surpriseButton").addEventListener("click", () => {
-  window.location.href = "surprise.html";
-});
+document.getElementById("messageText").classList.remove("hidden"); });
+
+// Redirect to the surprise page document.getElementById("surpriseButton").addEventListener("click", () => { window.location.href = "surprise.html"; });
+
