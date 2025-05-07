@@ -1,84 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Admin</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: white;
-      text-align: center;
-      font-family: 'Cursive', sans-serif;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Happy Birthday Admin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            text-align: center;
+            font-family: 'Cursive', sans-serif;
+            overflow: hidden;
+        }
 
-    h1 {
-      margin-top: 80px;
-      font-size: 3em;
-      color: #ff4757;
-      animation: fadeIn 2s ease-in;
-    }
+        h1 {
+            margin-top: 80px;
+            font-size: 3em;
+            color: #ff4757;
+            animation: fadeIn 2s ease-in;
+        }
 
-    p {
-      font-size: 2em;
-      color: #ffa502;
-      animation: fadeIn 3s ease-in;
-    }
+        p {
+            font-size: 2em;
+            color: #ffa502;
+            animation: fadeIn 3s ease-in;
+        }
 
-    .roses {
-      font-size: 2em;
-      margin-top: 20px;
-      animation: fadeIn 4s ease-in;
-    }
+        .roses {
+            font-size: 2em;
+            margin-top: 20px;
+            animation: fadeIn 4s ease-in;
+            z-index: 1; /* Ensure it's above other elements */
+            position: relative; /* Prevent overlap issues */
+            text-align: center; /* Center align the roses */
+        }
 
-    .fireworks {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      background-image: url('fireworks.gif'); /* Replace with actual gif path */
-      background-size: cover;
-      opacity: 0.4;
-    }
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background-image: url('fireworks.gif'); /* Replace with actual gif path */
+            background-size: cover;
+            opacity: 0.4;
+        }
 
-    .video-container {
-    margin-top: 40px;
-    }
+        .video-container {
+            display: flex; /* Flexbox for alignment */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            width: 100vw; /* Full width of the viewport */
+            height: auto; /* Adjust height */
+            margin-top: 40px; /* Space above video */
+        }
 
-    video {
-    width: 80%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
+        video {
+            width: 80%; /* Adjust size */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-  <div class="fireworks"></div>
-  
-  <!-- Background Music -->
-<audio autoplay loop>
-     <source src="birthday_music.mp3" type="audio/mpeg">
-     Your browser does not support the audio element.
-</audio>
-  <h1>Happy Birthday Admin</h1>
-  <div class="roses">🌹 🌹 🌹</div>
+    <div class="fireworks"></div>
+    
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="birthday_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <h1>Happy Birthday Admin</h1>
+    <div class="roses">🌹 🌹 🌹</div>
 
-  <!-- Video Section -->
-  <div class="video-container">
-    <video controls>
-      <source src="birthday_video.mp4" type="video/mp4">
-    </video>
-  </div>
+    <!-- Video Section -->
+    <div class="video-container">
+        <video controls>
+            <source src="birthday_video.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 </html>
