@@ -1,42 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const startButton = document.getElementById('startButton');
-  const scene1 = document.getElementById('scene1');
-  const scene3 = document.getElementById('scene3');
-  const balloonsContainer = document.getElementById('balloonsContainer');
-  const messageText = document.getElementById('messageText');
-  const surpriseButton = document.getElementById('surpriseButton');
+document.getElementById("startButton").addEventListener("click", () => {
+  document.getElementById("scene1").classList.add("hidden");
+  const scene3 = document.getElementById("scene3");
+  scene3.classList.remove("hidden");
 
-  const photoList = [
-    'img1.jpg', // Replace with actual photo paths
-    'img2.jpg',
-    'img3.jpg'
-  ];
+  const balloonsContainer = document.getElementById("balloonsContainer");
+  const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
 
-  startButton.addEventListener('click', () => {
-    scene1.classList.add('hidden');
-    scene3.classList.remove('hidden');
-    loadBalloons();
+  photos.forEach((src, index) => {
+    const balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    balloon.style.left = `${30 + index * 100}px`;
+    balloon.style.animationDelay = `${index * 1.5}s`;
+
+    const img = document.createElement("img");
+    img.src = src;
+
+    balloon.appendChild(img);
+    balloonsContainer.appendChild(balloon);
   });
 
-  function loadBalloons() {
-    photoList.forEach((src, i) => {
-      const balloon = document.createElement('div');
-      balloon.classList.add('balloon');
-      balloon.style.left = `${40 + i * 80}px`;
-      balloon.style.animationDelay = `${i * 0.8}s`;
+  document.getElementById("messageText").classList.remove("hidden");
+});
 
-      const img = document.createElement('img');
-      img.src = src;
-      balloon.appendChild(img);
-      balloonsContainer.appendChild(balloon);
-    });
-
-    setTimeout(() => {
-      messageText.classList.remove('hidden');
-    }, 4000);
-  }
-
-  surpriseButton.addEventListener('click', () => {
-    window.location.href = 'surprise.html';
-  });
+document.getElementById("surpriseButton").addEventListener("click", () => {
+  window.location.href = "surprise.html";
 });
