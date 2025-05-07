@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const photoList = [
     'img1.jpg', // Replace with actual photo paths
     'img2.jpg',
-    'img3.jpg',
-    'img4.jpg'
+    'img3.jpg'
   ];
 
   startButton.addEventListener('click', () => {
