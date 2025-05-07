@@ -19,6 +19,13 @@
                 heart.remove();
             }, 5000); // Match animation duration
         }
+  // Function to create multiple hearts at once
+        function createMultipleHearts() {
+            const numberOfHearts = 5; // Adjust this number for more hearts at once
+            for (let i = 0; i < numberOfHearts; i++) {
+                createHeart();
+            }
+        }
 
         // Generate hearts every 300ms
         setInterval(createHeart, 300);
