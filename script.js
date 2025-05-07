@@ -1,53 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('startButton');
-    const scene1 = document.getElementById('scene1');
-    const scene3 = document.getElementById('scene3');
-    const balloonsContainer = document.getElementById('balloonsContainer');
-    const messageText = document.getElementById('messageText');
-    const surpriseButton = document.getElementById('surpriseButton');
-    
-    // Add the audio element dynamically
-    const audio = new Audio(birthday_music.mp3); // Replace with your music file path
+document.getElementById("startButton").addEventListener("click", () => {
+  document.getElementById("scene1").classList.add("hidden");
+  const scene3 = document.getElementById("scene3");
+  scene3.classList.remove("hidden");
+
+  const balloonsContainer = document.getElementById("balloonsContainer");
+  // Add the audio element dynamically
+    const audio = new Audio('birthday_music.mp3'); // Replace with your music file path
     audio.loop = true; // Set the music to loop
+  const photos = ["img1.jpeg", "img2.jpeg", "img3.jpeg"]; // Replace with actual image paths
 
-    const photoList = [
-        'img1.jpg', // Replace with actual photo paths
-        'img2.jpg',
-        'img3.jpg',
-        'img4.jpg'
-    ];
+  photos.forEach((src, index) => {
+    const balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    balloon.style.left = `${30 + index * 100}px`;
+    balloon.style.animationDelay = `${index * 1.5}s`;
 
-    startButton.addEventListener('click', () => {
-        scene1.classList.add('hidden');
-        scene3.classList.remove('hidden');
-        loadBalloons();
-    });
+    const img = document.createElement("img");
+    img.src = src;
 
-    function loadBalloons() {
-        // Start the music when balloons appear
-        audio.play();
+    balloon.appendChild(img);
+    balloonsContainer.appendChild(balloon);
+  });
 
-        photoList.forEach((src, i) => {
-            const balloon = document.createElement('div');
-            balloon.classList.add('balloon');
-            balloon.style.left = `${Math.random() * 80}%`; // Randomize horizontal position
-            balloon.style.animationDelay = `${i * 0.8}s`;
+  document.getElementById("messageText").classList.remove("hidden");
+});
 
-            const img = document.createElement('img');
-            img.src = src;
-            img.style.width = '60px'; // Adjust image size
-            img.style.height = 'auto';
-
-            balloon.appendChild(img);
-            balloonsContainer.appendChild(balloon);
-        });
-
-        setTimeout(() => {
-            messageText.classList.remove('hidden');
-        }, 4000);
-    }
-
-    surpriseButton.addEventListener('click', () => {
-        window.location.href = 'surprise.html';
-    });
+document.getElementById("surpriseButton").addEventListener("click", () => {
+  window.location.href = "surprise.html";
 });
