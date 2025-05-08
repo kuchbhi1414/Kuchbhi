@@ -65,7 +65,7 @@ body {
 
 button {
   background: linear-gradient(45deg, #ff6b81, #ff4d4d);
-  bottom: 10px;
+  margin-bottom: 10px;
   color: white;
   border: none;
   padding: 8px 20px;
